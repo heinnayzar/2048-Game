@@ -1,0 +1,109 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #c9c9c9;
+    display: grid;
+    justify-content: center;
+    background-image: url();
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 5.5vmin;
+}
+
+#game-board{
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+    grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+    background-color: #3f3f3f;
+    gap: var(--cell-gap);
+    border-radius: 1vmin;
+    padding: var(--cell-gap);
+    position: relative;
+}
+
+.cell{
+    background-color: #7e7e7e;
+    border-radius: 1vmin;
+}
+
+.tile{
+    --x: 1;
+    --y: 2;
+    --background-lightness: 80%;
+    --text-lightness: 20%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--cell-size);
+    height: var(--cell-size);
+    background-color: red;
+    border-radius: 1vmin;
+    top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+    font-weight: bold;
+    background-color: hsl(50, 100%, var(--background-lightness));
+    color: hsl(50, 100%, var(--text-lightness));
+    animation: show 200ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+@keyframes show {
+    0%{
+        opacity: .5;
+        transform: scale(0);
+    }
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 5vmin;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    align-items: center;
+    margin: 0 auto;
+}
+
+.butt{
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 0 1.3vmin;
+    font-size: 3vmin;
+    text-align: center;
+    border: none;
+}
+
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4vmin;
+    padding: 2vmin;
+    width: 82vmin;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    margin-bottom: 4vmin;
+}
+
+.logo{
+    width: 7vmin;
+    height: 7vmin;
+}
+
+.titleContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4vmin;
+}
